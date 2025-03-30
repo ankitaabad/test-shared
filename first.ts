@@ -14,3 +14,10 @@ export type follower = {
   id: string;
   name: string;
 };
+
+export type anotherType = {
+  name: string;
+  age: string;
+  city: string;
+  country: string;
+};
