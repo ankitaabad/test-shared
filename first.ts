@@ -10,3 +10,7 @@ export type photo = {
   url: string;
 };
 
+export type follower = {
+  id: string;
+  name: string;
+};
