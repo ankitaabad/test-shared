@@ -1,23 +1,8 @@
-export type user = {
-  name: string;
-  city: string;
-  age: number;
-};
+import { oc } from "@orpc/contract";
+import { type } from "arktype";
 
-export type photo = {
-  id: string;
-  tag: string;
-  url: string;
-};
+export const getUser = oc
+  .route({ method: "GET", path: "/planets/{name}" })
+  .input(type({ name: "string", age: "number" }))
 
-export type follower = {
-  id: string;
-  name: string;
-};
-
-export type anotherType = {
-  name: string;
-  age: string;
-  city: string;
-  country: string;
-};
+export const router = oc.router({ user: { get: getUser } });
